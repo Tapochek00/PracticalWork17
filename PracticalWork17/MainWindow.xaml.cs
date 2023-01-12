@@ -36,6 +36,7 @@ namespace PracticalWork17
             DataGrid.ItemsSource = db.Accountings.Local.ToBindingList();
         }
 
+        
         private void Add_Click(object sender, RoutedEventArgs e)
         {
             Add add = new Add();
@@ -77,6 +78,7 @@ namespace PracticalWork17
             }
         }
 
+        List<Accounting> acc;
         private void Search_Click(object sender, RoutedEventArgs e)
         {
             SearchWindow s = new SearchWindow();
@@ -92,6 +94,15 @@ namespace PracticalWork17
                 else if (Data.setSearch == "Отчество") findContent = row.Patronymic;
                 else if (Data.setSearch == "Название цеха") findContent = row.WorkshopName;
                 else if (Data.setSearch == "Тип изделия") findContent = row.ProductType;
+                try
+                {
+                    //в лекции один объект а я хочу все элементы чтобы находились вот
+                    
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
     }
