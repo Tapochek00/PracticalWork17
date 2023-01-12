@@ -33,6 +33,7 @@
             <Button Content="Добавить запись" Margin="20" Padding="10" Click="Add_Click"></Button>
             <Button x:Name="Edit" Content="Редактировать запись" Margin="20" Padding="10" Click="Edit_Click"></Button>
             <Button x:Name="Delete" Content="Удалить запись" Margin="20" Padding="10" Click="Delete_Click"></Button>
+            <Button x:Name="Search" Content="Поиск" Margin="20" Padding="10" Click="Search_Click"></Button>
         </StackPanel>
     </Grid>
 </Window>

@@ -76,5 +76,10 @@ namespace PracticalWork17
                 }
             }
         }
+
+        private void Search_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
