@@ -42,5 +42,39 @@ namespace PracticalWork17
             add.Owner = this;
             add.ShowDialog();
         }
+
+        private void Edit_Click(object sender, RoutedEventArgs e)
+        {
+            int indexRow = DataGrid.SelectedIndex;
+            if (indexRow != -1)
+            {
+                Accounting row = (Accounting)DataGrid.Items[indexRow];
+                Data.Id = row.id;
+                EditRecord edit = new EditRecord();
+                edit.Owner = this;
+                edit.ShowDialog();
+                DataGrid.Items.Refresh();
+            }
+        }
+
+        private void Delete_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult result;
+            result = MessageBox.Show("Удалить запись?", "Удаление записи",
+                MessageBoxButton.YesNo, MessageBoxImage.Warning);
+            if (result == MessageBoxResult.Yes)
+            {
+                try
+                {
+                    Accounting row = (Accounting)DataGrid.SelectedItems[0];
+                    db.Accountings.Remove(row);
+                    db.SaveChanges();
+                }
+                catch (ArgumentOutOfRangeException)
+                {
+                    MessageBox.Show("Выберите запись");
+                }
+            }
+        }
     }
 }

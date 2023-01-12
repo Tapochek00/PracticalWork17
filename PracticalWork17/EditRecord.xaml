@@ -1,0 +1,60 @@
+﻿<Window x:Class="PracticalWork17.EditRecord"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PracticalWork17"
+        mc:Ignorable="d"
+        Title="Редактировать запись" Height="470" Width="400" Loaded="Window_Loaded" WindowStartupLocation="CenterOwner">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.7*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0">
+            <TextBlock Margin="20, 5" HorizontalAlignment="Left">Фамилия</TextBlock>
+            <TextBox x:Name="Surname" Margin="20, 5" HorizontalAlignment="Left" MinWidth="100"/>
+
+            <TextBlock Margin="20, 5" HorizontalAlignment="Left">Имя</TextBlock>
+            <TextBox x:Name="Namee" Margin="20, 5" HorizontalAlignment="Left" MinWidth="100"/>
+
+            <TextBlock Margin="20, 5" HorizontalAlignment="Left">Отчество</TextBlock>
+            <TextBox x:Name="Patronymic" Margin="20, 5" HorizontalAlignment="Left" MinWidth="100"/>
+
+            <TextBlock Margin="20, 5" HorizontalAlignment="Left">Название цеха</TextBlock>
+            <TextBox x:Name="WorkshopName" Margin="20, 5" HorizontalAlignment="Left" MinWidth="100"/>
+
+            <TextBlock Margin="20, 5" HorizontalAlignment="Left">Тип изделия</TextBlock>
+            <TextBox x:Name="ProductType" Margin="20, 5" HorizontalAlignment="Left" MinWidth="100"/>
+
+            <TextBlock Margin="20, 5" HorizontalAlignment="Left">Стоимость изделия</TextBlock>
+            <TextBox x:Name="Cost" Margin="20, 5" HorizontalAlignment="Left" MinWidth="100"/>
+
+            <Button x:Name="Edit" Padding="8, 5" Margin="20, 5" VerticalAlignment="Bottom" HorizontalAlignment="Left" Content="Изменить" Click="Edit_Click"></Button>
+            <Button x:Name="Cancel" Padding="8, 5" Margin="20, 5" VerticalAlignment="Bottom" HorizontalAlignment="Left" Content="Отмена" Click="Cancel_Click"></Button>
+        </StackPanel>
+        <TextBlock HorizontalAlignment="Center" Grid.Column="1">Количество изготовленных изделий</TextBlock>
+        <StackPanel Grid.Column="1" Margin="0, 30, 0, 0" HorizontalAlignment="Center" VerticalAlignment="Top">
+            <TextBlock Margin="20, 5" HorizontalAlignment="Left">Понедельник</TextBlock>
+            <TextBox x:Name="mon" Margin="20, 5" HorizontalAlignment="Left" MinWidth="80"/>
+
+            <TextBlock Margin="20, 5" HorizontalAlignment="Left">Вторник</TextBlock>
+            <TextBox x:Name="tue" Margin="20, 5" HorizontalAlignment="Left" MinWidth="80"/>
+
+            <TextBlock Margin="20, 5" HorizontalAlignment="Left">Среда</TextBlock>
+            <TextBox x:Name="wed" Margin="20, 5" HorizontalAlignment="Left" MinWidth="80"/>
+
+            <TextBlock Margin="20, 5" HorizontalAlignment="Left">Четверг</TextBlock>
+            <TextBox x:Name="thu" Margin="20, 5" HorizontalAlignment="Left" MinWidth="80"/>
+
+            <TextBlock Margin="20, 5" HorizontalAlignment="Left">Пятница</TextBlock>
+            <TextBox x:Name="fri" Margin="20, 5" HorizontalAlignment="Left" MinWidth="80"/>
+
+            <TextBlock Margin="20, 5" HorizontalAlignment="Left">Суббота</TextBlock>
+            <TextBox x:Name="sat" Margin="20, 5" HorizontalAlignment="Left" MinWidth="80"/>
+
+            <TextBlock Margin="20, 5" HorizontalAlignment="Left">Воскресенье</TextBlock>
+            <TextBox x:Name="sun" Margin="20, 5" HorizontalAlignment="Left" MinWidth="80"/>
+        </StackPanel>
+    </Grid>
+</Window>

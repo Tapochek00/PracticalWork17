@@ -8,10 +8,10 @@
         Title="MainWindow" Height="250" Width="1000" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="5*"/>
-            <RowDefinition Height="73*"/>
+            <RowDefinition Height="9*"/>
+            <RowDefinition Height="5.5*"/>
         </Grid.RowDefinitions>
-        <DataGrid x:Name="DataGrid" IsReadOnly="True" VerticalAlignment="Top" Grid.RowSpan="2">
+        <DataGrid x:Name="DataGrid" IsReadOnly="True" VerticalAlignment="Top" Grid.Row="0" AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Width="4*" Header="Код" Binding="{Binding id}"/>
                 <DataGridTextColumn Width="10*" Header="Фамилия" Binding="{Binding Surname}"/>
@@ -29,10 +29,10 @@
                 <DataGridTextColumn Width="10*" Header="Стоимость" Binding="{Binding Cost}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,141,0,0" Grid.Row="1">
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0, 0, 0, 0" Grid.Row="1">
             <Button Content="Добавить запись" Margin="20" Padding="10" Click="Add_Click"></Button>
-            <Button Content="Редактировать запись" Margin="20" Padding="10"></Button>
-            <Button Content="Удалить запись" Margin="20" Padding="10"></Button>
+            <Button x:Name="Edit" Content="Редактировать запись" Margin="20" Padding="10" Click="Edit_Click"></Button>
+            <Button x:Name="Delete" Content="Удалить запись" Margin="20" Padding="10" Click="Delete_Click"></Button>
         </StackPanel>
     </Grid>
 </Window>

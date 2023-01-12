@@ -15,18 +15,37 @@ using System.Windows.Shapes;
 namespace PracticalWork17
 {
     /// <summary>
-    /// Логика взаимодействия для Add.xaml
+    /// Логика взаимодействия для EditRecord.xaml
     /// </summary>
-    public partial class Add : Window
+    public partial class EditRecord : Window
     {
-        public Add()
+        public EditRecord()
         {
             InitializeComponent();
         }
 
         AccountingEntities db = AccountingEntities.GetContext();
-        Accounting acc = new Accounting();
-        private void AddRecord_Click(object sender, RoutedEventArgs e)
+        Accounting acc;
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            acc = db.Accountings.Find(Data.Id);
+
+            Surname.Text = acc.Surname;
+            Namee.Text = acc.Name;
+            Patronymic.Text = acc.Patronymic;
+            mon.Text = acc.QuantityMon.ToString();
+            tue.Text = acc.QuantityTue.ToString();
+            wed.Text = acc.QuantityWed.ToString();
+            thu.Text = acc.QuantityThu.ToString();
+            fri.Text = acc.QuantityFri.ToString();
+            sat.Text = acc.QuantitySat.ToString();
+            sun.Text = acc.QuantitySun.ToString();
+            WorkshopName.Text = acc.WorkshopName;
+            ProductType.Text = acc.ProductType;
+            Cost.Text = acc.Cost.ToString();
+        }
+
+        private void Edit_Click(object sender, RoutedEventArgs e)
         {
             if (mon.Text.Length == 0) mon.Text = "0";
             if (tue.Text.Length == 0) tue.Text = "0";
@@ -50,7 +69,7 @@ namespace PracticalWork17
                 !int.TryParse(sat.Text, out y) ||
                 !int.TryParse(sun.Text, out y)
                 ) errors.AppendLine("Введите правильное количество");
-        
+
             if (errors.Length > 0)
             {
                 MessageBox.Show(errors.ToString());
@@ -73,11 +92,10 @@ namespace PracticalWork17
 
             try
             {
-                db.Accountings.Add(acc);
                 db.SaveChanges();
                 this.Close();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -87,5 +105,6 @@ namespace PracticalWork17
         {
             this.Close();
         }
+
     }
 }
