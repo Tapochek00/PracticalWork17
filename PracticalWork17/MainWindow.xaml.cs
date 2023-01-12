@@ -79,14 +79,19 @@ namespace PracticalWork17
 
         private void Search_Click(object sender, RoutedEventArgs e)
         {
-            SearchWindow s = new SearchWindow;
+            SearchWindow s = new SearchWindow();
             s.Owner = this;
             s.ShowDialog();
 
             for (int i = 0; i < DataGrid.Items.Count; i++)
             {
                 var row = (Accounting)DataGrid.Items[i];
-                string findContent = "";
+                string findContent;
+                if (Data.setSearch == "Фамилия") findContent = row.Surname;
+                else if (Data.setSearch == "Имя") findContent = row.Name;
+                else if (Data.setSearch == "Отчество") findContent = row.Patronymic;
+                else if (Data.setSearch == "Название цеха") findContent = row.WorkshopName;
+                else if (Data.setSearch == "Тип изделия") findContent = row.ProductType;
             }
         }
     }

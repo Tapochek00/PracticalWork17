@@ -10,7 +10,7 @@
         <TextBox x:Name="searchText" VerticalAlignment="Top" HorizontalAlignment="Center" Width="160" Margin="0, 30"></TextBox>
         
         <ComboBox x:Name="setSearch" VerticalAlignment="Center" HorizontalAlignment="Center" Width="100">
-            <ComboBoxItem IsSelected="True" Content="Фамилия">Фамилия</ComboBoxItem>
+            <ComboBoxItem IsSelected="True">Фамилия</ComboBoxItem>
             <ComboBoxItem>Имя</ComboBoxItem>
             <ComboBoxItem>Отчество</ComboBoxItem>
             <ComboBoxItem>Название цеха</ComboBoxItem>
