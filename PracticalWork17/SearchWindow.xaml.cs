@@ -23,5 +23,13 @@ namespace PracticalWork17
         {
             InitializeComponent();
         }
+
+        private void Search_Click(object sender, RoutedEventArgs e)
+        {
+            Data.setSearch = setSearch.Text;
+            Data.searchText = searchText.Text;
+
+            this.Close();
+        }
     }
 }

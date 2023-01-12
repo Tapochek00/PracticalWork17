@@ -5,8 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PracticalWork17"
         mc:Ignorable="d"
-        Title="SearchWindow" Height="450" Width="800">
+        Title="Поиск" Height="250" Width="400" ResizeMode="NoResize" WindowStartupLocation="CenterOwner">
     <Grid>
+        <TextBox x:Name="searchText" VerticalAlignment="Top" HorizontalAlignment="Center" Width="160" Margin="0, 30"></TextBox>
         
+        <ComboBox x:Name="setSearch" VerticalAlignment="Center" HorizontalAlignment="Center" Width="100">
+            <ComboBoxItem IsSelected="True" Content="Фамилия">Фамилия</ComboBoxItem>
+            <ComboBoxItem>Имя</ComboBoxItem>
+            <ComboBoxItem>Отчество</ComboBoxItem>
+            <ComboBoxItem>Название цеха</ComboBoxItem>
+            <ComboBoxItem>Тип изделия</ComboBoxItem>
+        </ComboBox>
+
+        <Button x:Name="Search" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0, 20" Content="Поиск" Padding="5" Click="Search_Click"></Button>
     </Grid>
 </Window>

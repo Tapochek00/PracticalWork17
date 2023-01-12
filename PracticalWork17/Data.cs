@@ -9,5 +9,9 @@ namespace PracticalWork17
     public static class Data
     {
         public static int Id;
+
+        public static string setSearch;
+
+        public static string searchText;
     }
 }
