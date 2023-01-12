@@ -30,7 +30,8 @@
             <TextBlock Margin="20, 5" HorizontalAlignment="Left">Стоимость изделия</TextBlock>
             <TextBox Margin="20, 5" HorizontalAlignment="Left" MinWidth="100"/>
 
-            <Button Padding="8" Margin="10" VerticalAlignment="Bottom" HorizontalAlignment="Center" Content="Добавить"></Button>
+            <Button Padding="8, 5" Margin="20, 5" VerticalAlignment="Bottom" HorizontalAlignment="Left" Content="Добавить"></Button>
+            <Button Padding="8, 5" Margin="20, 5" VerticalAlignment="Bottom" HorizontalAlignment="Left" Content="Отмена"></Button>
         </StackPanel>
         <TextBlock HorizontalAlignment="Center" Grid.Column="1">Количество изготовленных изделий</TextBlock>
         <StackPanel Grid.Column="1" Margin="0, 30, 0, 0" HorizontalAlignment="Center" VerticalAlignment="Top">

@@ -38,7 +38,9 @@ namespace PracticalWork17
 
         private void Add_Click(object sender, RoutedEventArgs e)
         {
-
+            Add add = new Add();
+            add.Owner = this;
+            add.ShowDialog();
         }
     }
 }
