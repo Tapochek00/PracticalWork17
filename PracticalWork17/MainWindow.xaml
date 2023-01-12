@@ -7,9 +7,13 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="250" Width="1000" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
     <Grid>
-        <DataGrid x:Name="DataGrid" IsReadOnly="True" VerticalAlignment="Top">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="73*"/>
+        </Grid.RowDefinitions>
+        <DataGrid x:Name="DataGrid" IsReadOnly="True" VerticalAlignment="Top" Grid.RowSpan="2">
             <DataGrid.Columns>
-                <DataGridTextColumn Width="3*" Header="Код" Binding="{Binding Id}"/>
+                <DataGridTextColumn Width="4*" Header="Код" Binding="{Binding id}"/>
                 <DataGridTextColumn Width="10*" Header="Фамилия" Binding="{Binding Surname}"/>
                 <DataGridTextColumn Width="10*" Header="Имя" Binding="{Binding Name}"/>
                 <DataGridTextColumn Width="10*" Header="Отчество" Binding="{Binding Patronymic}"/>
@@ -25,7 +29,7 @@
                 <DataGridTextColumn Width="10*" Header="Стоимость" Binding="{Binding Cost}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,141,0,0" Grid.Row="1">
             <Button Content="Добавить запись" Margin="20" Padding="10" Click="Add_Click"></Button>
             <Button Content="Редактировать запись" Margin="20" Padding="10"></Button>
             <Button Content="Удалить запись" Margin="20" Padding="10"></Button>

@@ -13,48 +13,48 @@
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Column="0">
             <TextBlock Margin="20, 5" HorizontalAlignment="Left">Фамилия</TextBlock>
-            <TextBox Margin="20, 5" HorizontalAlignment="Left" MinWidth="100"/>
+            <TextBox x:Name="Surname" Margin="20, 5" HorizontalAlignment="Left" MinWidth="100"/>
 
             <TextBlock Margin="20, 5" HorizontalAlignment="Left">Имя</TextBlock>
-            <TextBox Margin="20, 5" HorizontalAlignment="Left" MinWidth="100"/>
+            <TextBox x:Name="Namee" Margin="20, 5" HorizontalAlignment="Left" MinWidth="100"/>
 
             <TextBlock Margin="20, 5" HorizontalAlignment="Left">Отчество</TextBlock>
-            <TextBox Margin="20, 5" HorizontalAlignment="Left" MinWidth="100"/>
+            <TextBox x:Name="Patronymic" Margin="20, 5" HorizontalAlignment="Left" MinWidth="100"/>
 
             <TextBlock Margin="20, 5" HorizontalAlignment="Left">Название цеха</TextBlock>
-            <TextBox Margin="20, 5" HorizontalAlignment="Left" MinWidth="100"/>
+            <TextBox x:Name="WorkshopName" Margin="20, 5" HorizontalAlignment="Left" MinWidth="100"/>
 
             <TextBlock Margin="20, 5" HorizontalAlignment="Left">Тип изделия</TextBlock>
-            <TextBox Margin="20, 5" HorizontalAlignment="Left" MinWidth="100"/>
+            <TextBox x:Name="ProductType" Margin="20, 5" HorizontalAlignment="Left" MinWidth="100"/>
 
             <TextBlock Margin="20, 5" HorizontalAlignment="Left">Стоимость изделия</TextBlock>
-            <TextBox Margin="20, 5" HorizontalAlignment="Left" MinWidth="100"/>
+            <TextBox x:Name="Cost" Margin="20, 5" HorizontalAlignment="Left" MinWidth="100"/>
 
-            <Button Padding="8, 5" Margin="20, 5" VerticalAlignment="Bottom" HorizontalAlignment="Left" Content="Добавить"></Button>
-            <Button Padding="8, 5" Margin="20, 5" VerticalAlignment="Bottom" HorizontalAlignment="Left" Content="Отмена"></Button>
+            <Button x:Name="AddRecord" Padding="8, 5" Margin="20, 5" VerticalAlignment="Bottom" HorizontalAlignment="Left" Content="Добавить" Click="AddRecord_Click"></Button>
+            <Button x:Name="Cancel" Padding="8, 5" Margin="20, 5" VerticalAlignment="Bottom" HorizontalAlignment="Left" Content="Отмена" Click="Cancel_Click"></Button>
         </StackPanel>
         <TextBlock HorizontalAlignment="Center" Grid.Column="1">Количество изготовленных изделий</TextBlock>
         <StackPanel Grid.Column="1" Margin="0, 30, 0, 0" HorizontalAlignment="Center" VerticalAlignment="Top">
             <TextBlock Margin="20, 5" HorizontalAlignment="Left">Понедельник</TextBlock>
-            <TextBox Margin="20, 5" HorizontalAlignment="Left" MinWidth="80"/>
+            <TextBox x:Name="mon" Margin="20, 5" HorizontalAlignment="Left" MinWidth="80"/>
 
             <TextBlock Margin="20, 5" HorizontalAlignment="Left">Вторник</TextBlock>
-            <TextBox Margin="20, 5" HorizontalAlignment="Left" MinWidth="80"/>
+            <TextBox x:Name="tue" Margin="20, 5" HorizontalAlignment="Left" MinWidth="80"/>
 
             <TextBlock Margin="20, 5" HorizontalAlignment="Left">Среда</TextBlock>
-            <TextBox Margin="20, 5" HorizontalAlignment="Left" MinWidth="80"/>
+            <TextBox x:Name="wed" Margin="20, 5" HorizontalAlignment="Left" MinWidth="80"/>
 
             <TextBlock Margin="20, 5" HorizontalAlignment="Left">Четверг</TextBlock>
-            <TextBox Margin="20, 5" HorizontalAlignment="Left" MinWidth="80"/>
+            <TextBox x:Name="thu" Margin="20, 5" HorizontalAlignment="Left" MinWidth="80"/>
 
             <TextBlock Margin="20, 5" HorizontalAlignment="Left">Пятница</TextBlock>
-            <TextBox Margin="20, 5" HorizontalAlignment="Left" MinWidth="80"/>
+            <TextBox x:Name="fri" Margin="20, 5" HorizontalAlignment="Left" MinWidth="80"/>
 
             <TextBlock Margin="20, 5" HorizontalAlignment="Left">Суббота</TextBlock>
-            <TextBox Margin="20, 5" HorizontalAlignment="Left" MinWidth="80"/>
+            <TextBox x:Name="sat" Margin="20, 5" HorizontalAlignment="Left" MinWidth="80"/>
 
             <TextBlock Margin="20, 5" HorizontalAlignment="Left">Воскресенье</TextBlock>
-            <TextBox Margin="20, 5" HorizontalAlignment="Left" MinWidth="80"/>
+            <TextBox x:Name="sun" Margin="20, 5" HorizontalAlignment="Left" MinWidth="80"/>
         </StackPanel>
     </Grid>
 </Window>

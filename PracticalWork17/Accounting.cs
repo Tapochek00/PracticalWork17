@@ -27,6 +27,6 @@ namespace PracticalWork17
         public Nullable<int> QuantitySun { get; set; }
         public string WorkshopName { get; set; }
         public string ProductType { get; set; }
-        public Nullable<double> Cost { get; set; }
+        public double Cost { get; set; }
     }
 }
