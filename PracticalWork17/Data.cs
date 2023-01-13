@@ -12,6 +12,10 @@ namespace PracticalWork17
 
         public static string setSearch;
 
+        public static string setFilter;
+
         public static string searchText;
+
+        public static string filterText;
     }
 }

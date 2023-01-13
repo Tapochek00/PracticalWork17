@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PracticalWork17"
         mc:Ignorable="d"
-        Title="MainWindow" Height="250" Width="1000" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
+        Title="Практическая работа №17" Height="250" Width="1000" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="9*"/>
@@ -34,6 +34,8 @@
             <Button x:Name="Edit" Content="Редактировать запись" Margin="20" Padding="10" Click="Edit_Click"></Button>
             <Button x:Name="Delete" Content="Удалить запись" Margin="20" Padding="10" Click="Delete_Click"></Button>
             <Button x:Name="Search" Content="Поиск" Margin="20" Padding="10" Click="Search_Click"></Button>
+            <Button x:Name="Filter" Content="Фильтр" Margin="20" Padding="10" Click="Filter_Click"></Button>
+            <Button x:Name="Reset" Content="Сброс фильтра" Margin="20" Padding="10" Click="Reset_Click"></Button>
         </StackPanel>
     </Grid>
 </Window>

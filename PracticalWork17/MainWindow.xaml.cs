@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -46,15 +47,22 @@ namespace PracticalWork17
 
         private void Edit_Click(object sender, RoutedEventArgs e)
         {
-            int indexRow = DataGrid.SelectedIndex;
-            if (indexRow != -1)
+            try
             {
-                Accounting row = (Accounting)DataGrid.Items[indexRow];
-                Data.Id = row.id;
-                EditRecord edit = new EditRecord();
-                edit.Owner = this;
-                edit.ShowDialog();
-                DataGrid.Items.Refresh();
+                int indexRow = DataGrid.SelectedIndex;
+                if (indexRow != -1)
+                {
+                    Accounting row = (Accounting)DataGrid.Items[indexRow];
+                    Data.Id = row.id;
+                    EditRecord edit = new EditRecord();
+                    edit.Owner = this;
+                    edit.ShowDialog();
+                    DataGrid.Items.Refresh();
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -78,7 +86,6 @@ namespace PracticalWork17
             }
         }
 
-        List<Accounting> acc;
         private void Search_Click(object sender, RoutedEventArgs e)
         {
             SearchWindow s = new SearchWindow();
@@ -88,7 +95,7 @@ namespace PracticalWork17
             for (int i = 0; i < DataGrid.Items.Count; i++)
             {
                 var row = (Accounting)DataGrid.Items[i];
-                string findContent;
+                string findContent = null;
                 if (Data.setSearch == "Фамилия") findContent = row.Surname;
                 else if (Data.setSearch == "Имя") findContent = row.Name;
                 else if (Data.setSearch == "Отчество") findContent = row.Patronymic;
@@ -96,14 +103,56 @@ namespace PracticalWork17
                 else if (Data.setSearch == "Тип изделия") findContent = row.ProductType;
                 try
                 {
-                    //в лекции один объект а я хочу все элементы чтобы находились вот
-                    
+                    if (findContent != null && findContent.Contains(Data.searchText))
+                    {
+                        object item = DataGrid.Items[i];
+                        DataGrid.SelectedItem = item;
+                        DataGrid.ScrollIntoView(item);
+                        DataGrid.Focus();
+                        break;
+                    }
                 }
                 catch(Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
             }
+        }
+
+        List<Accounting> _accounting;
+        private void Filter_Click(object sender, RoutedEventArgs e)
+        {
+            FilterWindow filt = new FilterWindow();
+            filt.Owner = this;
+            filt.ShowDialog();
+
+            try
+            {
+                _accounting = db.Accountings.ToList();
+                var filtered = _accounting.Where(_accounting => _accounting.Surname.Contains(Data.filterText));
+                if (Data.setFilter == "Фамилия")
+                    filtered = _accounting.Where(_accounting => _accounting.Surname.Contains(Data.filterText));
+                else if (Data.setFilter == "Имя")
+                    filtered = _accounting.Where(_accounting => _accounting.Name.Contains(Data.filterText));
+                else if (Data.setFilter == "Отчество")
+                    filtered = _accounting.Where(_accounting => _accounting.Patronymic.Contains(Data.filterText));
+                else if (Data.setFilter == "Название цеха")
+                    filtered = _accounting.Where(_accounting => _accounting.WorkshopName.Contains(Data.filterText));
+                else if (Data.setFilter == "Тип изделия")
+                    filtered = _accounting.Where(_accounting => _accounting.ProductType.Contains(Data.filterText));
+                else filtered = null;
+
+                DataGrid.ItemsSource = filtered;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void Reset_Click(object sender, RoutedEventArgs e)
+        {
+            DataGrid.ItemsSource = db.Accountings.Local.ToBindingList();
         }
     }
 }
