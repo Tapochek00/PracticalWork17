@@ -154,5 +154,19 @@ namespace PracticalWork17
         {
             DataGrid.ItemsSource = db.Accountings.Local.ToBindingList();
         }
+
+        private void About_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Практическая работа № 17 - Создание приложения с БД\n\nВариант 14\n\n" +
+                "Учет изделий, собранных в цехе за неделю. База данных должна содержать следующую " +
+                "информацию: фамилию, имя, отчество сборщика, количество изготовленных изделий за " +
+                "каждый день недели раздельно, название цеха, а также тип изделия и его стоимость. " +
+                "\n\nвыполнила Дунаева М.И. группа ИСП-31");
+        }
+
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
