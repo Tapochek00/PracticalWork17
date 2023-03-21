@@ -28,13 +28,13 @@ namespace PracticalWork17
         }
 
         //Получаем доступ к контексту данных
-        AccountingEntities db = AccountingEntities.GetContext();
+        AccountingEntities1 db = AccountingEntities1.GetContext();
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             //Загружаем таблицу из БД
-            db.Accountings.Load();
+            db.Accounting.Load();
             //Загружаем таблицу в DataGrid с отслеживанием изменения контекста
-            DataGrid.ItemsSource = db.Accountings.Local.ToBindingList();
+            DataGrid.ItemsSource = db.Accounting.Local.ToBindingList();
         }
 
         
@@ -76,7 +76,7 @@ namespace PracticalWork17
                 try
                 {
                     Accounting row = (Accounting)DataGrid.SelectedItems[0];
-                    db.Accountings.Remove(row);
+                    db.Accounting.Remove(row);
                     db.SaveChanges();
                 }
                 catch (ArgumentOutOfRangeException)
@@ -128,7 +128,7 @@ namespace PracticalWork17
 
             try
             {
-                _accounting = db.Accountings.ToList();
+                _accounting = db.Accounting.ToList();
                 var filtered = _accounting.Where(_accounting => _accounting.Surname.Contains(Data.filterText));
                 if (Data.setFilter == "Фамилия")
                     filtered = _accounting.Where(_accounting => _accounting.Surname.Contains(Data.filterText));
@@ -152,7 +152,7 @@ namespace PracticalWork17
 
         private void Reset_Click(object sender, RoutedEventArgs e)
         {
-            DataGrid.ItemsSource = db.Accountings.Local.ToBindingList();
+            DataGrid.ItemsSource = db.Accounting.Local.ToBindingList();
         }
 
         private void About_Click(object sender, RoutedEventArgs e)

@@ -24,11 +24,11 @@ namespace PracticalWork17
             InitializeComponent();
         }
 
-        AccountingEntities db = AccountingEntities.GetContext();
+        AccountingEntities1 db = AccountingEntities1.GetContext();
         Accounting acc;
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            acc = db.Accountings.Find(Data.Id);
+            acc = db.Accounting.Find(Data.Id);
 
             Surname.Text = acc.Surname;
             Namee.Text = acc.Name;

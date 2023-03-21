@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PracticalWork17"
         mc:Ignorable="d"
-        Title="Практическая работа №17" Height="250" Width="1000" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
+        Title="Практическая работа №17" Height="400" Width="1000" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="9*"/>

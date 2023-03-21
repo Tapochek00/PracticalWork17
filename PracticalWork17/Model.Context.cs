@@ -13,10 +13,10 @@ namespace PracticalWork17
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class AccountingEntities : DbContext
+    public partial class AccountingEntities1 : DbContext
     {
-        public AccountingEntities()
-            : base("name=AccountingEntities")
+        public AccountingEntities1()
+            : base("name=AccountingEntities1")
         {
         }
     
@@ -25,16 +25,16 @@ namespace PracticalWork17
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Accounting> Accountings { get; set; }
+        public virtual DbSet<Accounting> Accounting { get; set; }
 
         //Добавляем статичную ссылку на контекст
-        private static AccountingEntities context;
+        private static AccountingEntities1 context;
 
         //Добавляем метод получения ссылки на контекст
-        public static AccountingEntities GetContext()
+        public static AccountingEntities1 GetContext()
         {
             if (context == null)
-                context = new AccountingEntities();
+                context = new AccountingEntities1();
             return context;
         }
     }

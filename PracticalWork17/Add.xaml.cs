@@ -24,7 +24,7 @@ namespace PracticalWork17
             InitializeComponent();
         }
 
-        AccountingEntities db = AccountingEntities.GetContext();
+        AccountingEntities1 db = AccountingEntities1.GetContext();
         Accounting acc = new Accounting();
         private void AddRecord_Click(object sender, RoutedEventArgs e)
         {
@@ -73,7 +73,7 @@ namespace PracticalWork17
 
             try
             {
-                db.Accountings.Add(acc);
+                db.Accounting.Add(acc);
                 db.SaveChanges();
                 this.Close();
             }
